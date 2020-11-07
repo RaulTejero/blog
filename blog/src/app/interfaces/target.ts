@@ -7,4 +7,3 @@ export interface Target {
     category?: string
 }
 
-// titulo, texto, autor, imagen (puede ser una url), fecha, categoria
