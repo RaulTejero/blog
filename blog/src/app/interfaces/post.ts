@@ -3,7 +3,7 @@ export interface Post {
     text?:string,
     author?:string,
     img?:string,
-    date?: Date,
+    date?: string,
     category?: string
 }
 

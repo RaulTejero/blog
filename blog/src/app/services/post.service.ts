@@ -12,10 +12,11 @@ export class PostService {
    this.postsOfBlog = [
      {
        title: 'Titulo de prueba',
-       text: 'Texto de prueba',
-       author: 'Autor de prueba',
-       img: 'url prueba',
-       category: 'categoria'
+       text: 'Texto de prueba del post',
+       author: 'Autor',
+       img: 'https://images.pexels.com/photos/5418319/pexels-photo-5418319.jpeg?cs=srgb&dl=pexels-evie-shaffer-5418319.jpg&fm=jpg',
+       date: "12 mier",
+       category: 'fotografia'
      }
    ];
   }
