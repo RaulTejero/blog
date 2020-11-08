@@ -39,6 +39,9 @@ export class PostService {
   addPost(pPost:Post): Promise<Post[]>  {
     return new Promise((resolve, reject)=> {
       this.postsOfBlog.push(pPost);
+      console.log(pPost);
+      console.log(this.postsOfBlog);
+      
       resolve(this.postsOfBlog);
     });
   };

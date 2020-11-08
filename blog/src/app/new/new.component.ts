@@ -12,6 +12,7 @@ export class NewComponent implements OnInit {
 
   form: FormGroup;
   categories: string[];
+  post:string[];
 
   constructor(private postService: PostService) {
     this.categories = [
@@ -30,8 +31,10 @@ export class NewComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onSubmit() {
-    console.log(this.form.value);
+  async onSubmit() {
+
+    await this.postService.addPost(this.form.value) 
+    // console.log(this.form.value);
     this.form.reset();
   }
 
