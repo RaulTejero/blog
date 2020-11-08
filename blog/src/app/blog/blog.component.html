@@ -1,9 +1,8 @@
 <div class="nav">
   <div class="divselect">
-    <select class="form-control" (change)="change($event)">
+    <select class="form-control" (change)="change($event)" >
       <option value="all">Todas las categorias</option>
-      <option value="fotografia">Fotografia</option>
-      <option value="desine">Diseño</option>
+      <option [value]="category" *ngFor="let category of arrayCategory">{{category | titlecase}}</option>
     </select>
   </div>
 </div>
@@ -14,7 +13,7 @@
       <div class="borderTarget">
         <div>
           <h5>{{post.author}}</h5>
-          <p>{{post.date}}</p>
+          <p>{{post.date | date:'dd/MM/yyyy HH:mm' }}</p>
         </div>
         <div class="img">
           <img src="{{post.img}}" alt="">

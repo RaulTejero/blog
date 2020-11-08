@@ -1,6 +1,6 @@
-import { variable } from '@angular/compiler/src/output/output_ast';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Post } from '../interfaces/post';
 import { PostService } from '../services/post.service';
 
 @Component({
@@ -11,31 +11,36 @@ import { PostService } from '../services/post.service';
 export class NewComponent implements OnInit {
 
   form: FormGroup;
-  categories: string[];
-  post:string[];
+  // categories: string[];
+  date: Date;
+  newPost: Post;
+  arrayCategory: string[];
 
   constructor(private postService: PostService) {
-    this.categories = [
-      'moda', 'deporte', 'ocio', 'actualidad', 'tecnologia', 'familiar',
-    ]
+
+    this.arrayCategory = postService.categories;
+
     this.form = new FormGroup(
       {
-        category: new FormControl('',Validators.required),
-        title: new FormControl('', [Validators.required, Validators.maxLength(30),Validators.minLength(1)]),
-        author: new FormControl('', [Validators.required, Validators.maxLength(30),Validators.minLength(1)]),
+        category: new FormControl('', Validators.required),
+        title: new FormControl('', [Validators.required, Validators.maxLength(30), Validators.minLength(1)]),
+        author: new FormControl('', [Validators.required, Validators.maxLength(30), Validators.minLength(1)]),
         img: new FormControl(''),
-        text: new FormControl('',[ Validators.maxLength(400)]),
+        text: new FormControl('', [Validators.maxLength(400)]),
       }
     )
-  }
 
+    setInterval(() => {
+      this.date = new Date;
+    }, 1000);
+  }
   ngOnInit(): void {
   }
   async onSubmit() {
-
-    await this.postService.addPost(this.form.value) 
-    // console.log(this.form.value);
+    this.newPost = this.form.value;
+    this.newPost.date = this.date
+    console.log(this.newPost);
+    await this.postService.addPost(this.newPost);
     this.form.reset();
   }
-
 }

@@ -17,13 +17,13 @@
   <div class=" mb-3">
     <label for="basic-url">Categoria</label>
     <select class="form-control" formControlName="category">
-      <option [value]="category" *ngFor="let category of categories">{{category}}</option>
+      <option [value]="category" *ngFor="let category of arrayCategory">{{category | titlecase}}</option>
     </select>
   </div>
   <label for="basic-url">URL de la imagen</label>
   <div class="input-group mb-3">
     <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+      <span class="input-group-text" id="basic-addon3">https://example.com/img.jpg</span>
     </div>
     <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" formControlName="img">
   </div>

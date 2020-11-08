@@ -12,8 +12,11 @@ export class BlogComponent implements OnInit {
   posts: Post[];
   changeSelect: string;
   valueSelect: string;
+  arrayCategory: string[];
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService) {
+    this.arrayCategory = postService.categories;
+   }
 
   async ngOnInit() {
 
@@ -34,8 +37,7 @@ export class BlogComponent implements OnInit {
     this.postService.getPostByCategory(this.valueSelect)
       .then(arrFilter => {
         this.posts = arrFilter
-        console.log(this.posts);
-
+        // console.log(this.posts);
       })
       .catch(error => console.log(error));
 
