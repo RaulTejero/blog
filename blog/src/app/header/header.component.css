@@ -1,0 +1,16 @@
+:root {
+    --principalColor:rgb(60, 60, 60);
+}
+
+h5 {
+    background-color: rgb(60, 60, 60);
+    color: white;
+}
+
+a {
+    color:   var(--principalColor);
+}
+ ul li a:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(60, 60, 60);
+}
