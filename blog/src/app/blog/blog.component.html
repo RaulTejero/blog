@@ -1,35 +1,34 @@
 <div class="nav">
-    <div class="form-group">
-        <select class="form-control" id="exampleFormControlSelect1" (change)="change($event)" >
-          <option value="all">Todas las categorias</option>
-          <option  value="fotografia">Fotografia</option>
-          <option  value="desine">Diseño</option>
-        </select>
-      </div>
-    <div class="add">
+  <div class="form-group">
+    <select class="form-control" id="exampleFormControlSelect1" (change)="change($event)">
+      <option value="all">Todas las categorias</option>
+      <option value="fotografia">Fotografia</option>
+      <option value="desine">Diseño</option>
+    </select>
+  </div>
+  <!-- <div class="add">
         <button type="button" class="btn btn-primary rounded-2">Nuevo post</button>
-    </div>
+    </div> -->
 </div>
 
 <div class="container">
-    
-    <div class="row" *ngFor="let post of posts">
-      <div class="col-sm-12  col-md-6 col-xl-4">
-        <div class="borderTarget">
-            <div>
-                <h5>{{post.author}}</h5>
-                <p>{{post.date}}</p>
-            </div>
-            <div class="img" >
-                <img src="{{post.img}}" alt="">
-            </div>
-              <div>
-                <h4>{{post.title}}</h4>
-                <p>{{post.text}}</p>
-                <h6>{{post.category}}</h6>
-            </div>
+  <div class="row">
+    <div class="col-sm-12  col-md-6 col-xl-4" *ngFor="let post of posts">
+      <div class="borderTarget">
+        <div>
+          <h5>{{post.author}}</h5>
+          <p>{{post.date}}</p>
+        </div>
+        <div class="img">
+          <img src="{{post.img}}" alt="">
+        </div>
+        <div>
+          <h4>{{post.title}}</h4>
+          <p>{{post.text}}</p>
+          <h6>{{post.category}}</h6>
         </div>
       </div>
     </div>
-    
+  </div>
+
 </div>

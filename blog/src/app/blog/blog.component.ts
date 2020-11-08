@@ -16,29 +16,29 @@ export class BlogComponent implements OnInit {
   constructor(private postService: PostService) { }
 
   async ngOnInit() {
-    
+
     try {
       this.posts = await this.postService.getAllPost();
-      console.log(this.posts); 
+      console.log(this.posts);
     } catch (error) {
-      console.log(error); 
+      console.log(error);
     }
 
 
 
 
   }
-  
-  change(event:any) {
-     this.valueSelect= event.target.value;
-     this.postService.getPostByCategory(this.valueSelect)
-    .then(arrFilter =>{
-      this.posts = arrFilter
-      console.log(this.posts);
-      
-    })
-    .catch(error => console.log(error));    
-    
+
+  change(event: any) {
+    this.valueSelect = event.target.value;
+    this.postService.getPostByCategory(this.valueSelect)
+      .then(arrFilter => {
+        this.posts = arrFilter
+        console.log(this.posts);
+
+      })
+      .catch(error => console.log(error));
+
   }
 
 

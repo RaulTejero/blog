@@ -1,37 +1,35 @@
-<form class="col-sm-12 col-md-6">
- 
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-default">Titulo</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-      </div>
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-default">Autor</span>
-        </div>   
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-      </div>
-      <div class=" mb-3">
-           <select class="form-control">
-        <option>Default select</option>
-      </select>
-      </div>
-     
+<form class="col-sm-12 col-md-6" [formGroup]="form" (ngSubmit)="onSubmit()">
 
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-default">Url imagen</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-      </div>
-       
-    
-     
-    <div class="form-group">
-        <label for="exampleFormControlTextarea1">Example textarea</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-      </div>
-    
-    <button type="submit" class="btn btn-primary">Crear post</button>
-  </form>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Titulo</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default" formControlName="title">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Autor</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-default" formControlName="author">
+  </div>
+  <div class=" mb-3">
+    <label for="basic-url">Categoria</label>
+    <select class="form-control" formControlName="category">
+      <option [value]="category" *ngFor="let category of categories">{{category}}</option>
+    </select>
+  </div>
+  <label for="basic-url">URL de la imagen</label>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+    </div>
+    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" formControlName="img">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Example textarea</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="text"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Crear post</button>
+</form>
