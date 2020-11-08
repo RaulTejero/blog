@@ -1,13 +1,13 @@
 <div class="nav">
     <div class="btn-group">
-        <select type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <option value="">Todos los pots</option>
-            <option value="">item2</option>
-            <option value="">item3</option>
+        <select type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (change)="change($event)" >
+            <option value="all">Todos las categorias</option>
+            <option value="fotografia">foto</option>
+            <option value="desine">desin</option>
         </select>  
     </div>
     <div class="add">
-        <button type="button" class="btn btn-primary rounded-2">add</button>
+        <button type="button" class="btn btn-primary rounded-2">Nuevo post</button>
     </div>
 </div>
 
