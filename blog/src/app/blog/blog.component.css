@@ -1,27 +1,34 @@
-
 .divselect {
-    margin:20px auto 0px;
+    margin: 20px auto 0px;
 }
+
 .borderTarget {
-    border: 1px solid rgb(196, 196, 196);
     border-radius: 20px;
-    padding: 10px 10px;
-    margin: 20px auto;
-    background-color: rgb(243, 243, 243);
+    padding: 5px 10px;
+    /* margin: 20px auto; */
 }
+
 .borderTarget div:first-child {
     display: flex;
     justify-content: space-between;
 }
+
 .borderTarget h4, .borderTarget h5 {
     padding: 10px 0;
 }
+
+.date {
+    text-align: right;
+    font-size: .7em;
+}
+
 .img {
     width: 100%;
     height: auto;
     border-radius: 20px;
     margin-bottom: 5px;
 }
+
 img {
     display: block;
     margin: 0 auto;
@@ -29,4 +36,3 @@ img {
     max-width: 100%;
     border-radius: 20px;
 }
-

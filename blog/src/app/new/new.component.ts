@@ -11,20 +11,21 @@ import { PostService } from '../services/post.service';
 export class NewComponent implements OnInit {
 
   form: FormGroup;
-  // categories: string[];
   date: Date;
   newPost: Post;
   arrayCategory: string[];
+  alertRequired: string;
 
   constructor(private postService: PostService) {
 
     this.arrayCategory = postService.categories;
+    this.alertRequired = "El campo no puede estar vacio"
 
     this.form = new FormGroup(
       {
         category: new FormControl('', Validators.required),
-        title: new FormControl('', [Validators.required, Validators.maxLength(30), Validators.minLength(1)]),
-        author: new FormControl('', [Validators.required, Validators.maxLength(30), Validators.minLength(1)]),
+        title: new FormControl('', [Validators.required, Validators.maxLength(30)]),
+        author: new FormControl('', [Validators.required, Validators.maxLength(30)]),
         img: new FormControl(''),
         text: new FormControl('', [Validators.maxLength(400)]),
       }

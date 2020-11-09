@@ -7,23 +7,25 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container col-10">
   <div class="row">
-    <div class="col-sm-12  col-md-6 col-xl-4" *ngFor="let post of posts">
+    <div class="col-sm-6 col-lg-4 col-xl-3" *ngFor="let post of posts">
       <div class="borderTarget">
         <div>
-          <h5>{{post.author | titlecase}}</h5>
-          <p>{{post.date | date:'dd/MM/yyyy HH:mm' }}</p>
+         
+          <h4>{{post.title | titlecase}}</h4>
         </div>
         <div class="img">
           <img src="{{post.img}}" alt="">
         </div>
         <div>
-          <h4>{{post.title | titlecase}}</h4>
           <p>{{post.text | titlecase}}</p>
+          <h5>{{post.author | titlecase}}</h5>
           <h6>{{post.category | titlecase}}</h6>
         </div>
+        <p class="date">{{post.date | date:'dd/MM/yy HH:mm' }}</p>
       </div>
+      <hr>
     </div>
   </div>
 

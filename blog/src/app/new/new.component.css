@@ -1,15 +1,11 @@
 form {
-    margin:20px auto;
+    margin: 20px auto;
 }
 
 input.ng-invalid.ng-touched {
-    border: 1px solid rgb(206, 112, 112);
+    border: 1px solid rgb(255, 0, 0);
 }
 
 select.ng-invalid.ng-touched {
-    border: 1px solid rgb(206, 112, 112);
-}
-
-textarea.ng-invalid.ng-touched {
     border: 1px solid rgb(206, 112, 112);
 }

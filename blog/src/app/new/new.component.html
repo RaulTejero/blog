@@ -2,23 +2,36 @@
 
   <div class="input-group mb-3">
     <div class="input-group-prepend">
-      <span class="input-group-text" id="inputGroup-sizing-default">Titulo</span>
+      <span class="input-group-text" id="inputGroup-sizing-default">Titulo *</span>
     </div>
     <input type="text" class="form-control" aria-label="Sizing example input"
       aria-describedby="inputGroup-sizing-default" formControlName="title">
   </div>
+  <p class="text-danger"
+            *ngIf="form.get('title').hasError('required') && form.get('title').touched ">
+            {{alertRequired}}
+        </p>
   <div class="input-group mb-3">
     <div class="input-group-prepend">
-      <span class="input-group-text" id="inputGroup-sizing-default">Autor</span>
+      <span class="input-group-text" id="inputGroup-sizing-default">Autor *</span>
     </div>
     <input type="text" class="form-control" aria-label="Sizing example input"
       aria-describedby="inputGroup-sizing-default" formControlName="author">
   </div>
+  <p class="text-danger"
+            *ngIf="form.get('author').hasError('required') && form.get('author').touched">
+           {{alertRequired}}
+           {{ form.get('author').errors.maxlength.actualLength }} caracteres 
+        </p>
   <div class=" mb-3">
-    <label for="basic-url">Categoria</label>
+    <label for="basic-url">Categoria *</label>
     <select class="form-control" formControlName="category">
       <option [value]="category" *ngFor="let category of arrayCategory">{{category | titlecase}}</option>
     </select>
+    <p class="text-danger"
+            *ngIf="form.get('category').hasError('required') && form.get('category').touched">
+            Seleccione una categoria
+        </p>
   </div>
   <label for="basic-url">URL de la imagen</label>
   <div class="input-group mb-3">
@@ -28,9 +41,9 @@
     <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" formControlName="img">
   </div>
   <div class="form-group">
-    <label for="exampleFormControlTextarea1">Example textarea</label>
+    <label for="exampleFormControlTextarea1">Comentario</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="text"></textarea>
   </div>
+  <p>* Los campos son obligatorios</p>
   <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Crear post</button>
 </form>
-{{date | json}}
