@@ -39,7 +39,8 @@ export class NewComponent implements OnInit {
   }
   async onSubmit() {
     this.newPost = this.form.value;
-    this.newPost.date = this.date
+    this.newPost.date = this.date;
+    console.log(this.date);
     console.log(this.newPost);
     await this.postService.addPost(this.newPost);
     this.form.reset();
