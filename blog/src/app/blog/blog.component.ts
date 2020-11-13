@@ -13,6 +13,7 @@ export class BlogComponent implements OnInit {
   changeSelect: string;
   valueSelect: string;
   arrayCategory: string[];
+  idPost: number;
 
   constructor(private postService: PostService) {
     this.arrayCategory = postService.categories;
@@ -26,10 +27,6 @@ export class BlogComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
-
-
-
-
   }
 
   change(event: any) {
@@ -40,8 +37,10 @@ export class BlogComponent implements OnInit {
         // console.log(this.posts);
       })
       .catch(error => console.log(error));
-
   }
-
+  idOnClick(pIdPost) {
+    this.idPost = pIdPost;
+    console.log(this.idPost);
+  }
 
 }

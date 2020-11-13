@@ -7,6 +7,7 @@ import { BlogComponent } from './blog/blog.component';
 import { NewComponent } from './new/new.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
     BlogComponent,
     NewComponent,
     HeaderComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,

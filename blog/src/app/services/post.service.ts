@@ -9,13 +9,16 @@ export class PostService {
 
   postsOfBlog: Post[];
   categories: string[];
+  id: number;
 
   constructor() {
-    
-    this.categories = [ 'moda', 'deporte', 'ocio', 'actualidad', 'tecnologia', 'familiar'];
+
+    this.id = 7;
+    this.categories = ['moda', 'deporte', 'ocio', 'actualidad', 'tecnologia', 'familiar'];
 
     this.postsOfBlog = [
       {
+        id: 1,
         title: 'Titulo 1 de prueba',
         text: 'Texto de prueba del post',
         author: 'Autor',
@@ -24,6 +27,7 @@ export class PostService {
         category: 'moda'
       },
       {
+        id: 2,
         title: 'Titulo 2 de prueba',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, soluta excepturi! Suscipit, aperiam assumenda in debitrit.',
         author: 'Autor',
@@ -32,6 +36,7 @@ export class PostService {
         category: 'ocio'
       },
       {
+        id: 3,
         title: 'Titulo 3 de prueba',
         text: 'Texto de prueba del post',
         author: 'Autor',
@@ -40,6 +45,7 @@ export class PostService {
         category: 'deporte'
       },
       {
+        id: 4,
         title: 'Titulo 4 de prueba',
         text: 'Texto de prueba del post',
         author: 'Autor',
@@ -48,6 +54,7 @@ export class PostService {
         category: 'tecnologia'
       },
       {
+        id: 5,
         title: 'Titulo 5 de prueba',
         text: 'Texto de prueba del post',
         author: 'Autor',
@@ -56,6 +63,7 @@ export class PostService {
         category: 'familiar'
       },
       {
+        id: 6,
         title: 'Titulo 6 de prueba',
         text: 'Texto de prueba del post',
         author: 'Autor',
@@ -64,10 +72,12 @@ export class PostService {
         category: 'actualidad'
       }
     ];
-  }
-  addPost(pPost: Post): Promise<Post[]> {
+  };
+  getAddPost(pPost: Post): Promise<Post[]> {
     return new Promise((resolve, reject) => {
+      pPost.id = this.id;
       this.postsOfBlog.push(pPost);
+      this.id++;
       // console.log(pPost);
       // console.log(this.postsOfBlog);
       resolve(this.postsOfBlog);
@@ -77,12 +87,11 @@ export class PostService {
   getAllPost(): Promise<Post[]> {
     return new Promise<Post[]>((resolve, reject) => {
       resolve(this.postsOfBlog);
-    })
+    });
   };
   getPostByCategory(pCategory: string): Promise<Post[]> {
     return new Promise<Post[]>((resolve, reject) => {
       let arrFilter = [];
-      // console.log(pCategory);
       for (const post of this.postsOfBlog) {
         if (post.category === pCategory) {
           arrFilter.push(post);
@@ -90,10 +99,20 @@ export class PostService {
         } else if (pCategory === 'all') {
           resolve(this.postsOfBlog)
 
-        }
-      }
-    })
-  }
+        };
+      };
+    });
+  };
+  // getPost(pId): Promise<Post[]> {
+  //   return new Promise<Post[]>((resolve, reject)=> {
+  //     let result = this.postsOfBlog.filter(el =>el.id == pId);
+  //     console.log(pId);
+      
+  //     console.log(result);
+      
+  //     resolve(result)
+  //   });
+  // }
 
 }
 

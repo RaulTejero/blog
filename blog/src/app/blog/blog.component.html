@@ -6,13 +6,12 @@
     </select>
   </div>
 </div>
-
 <div class="container col-10">
   <div class="row">
     <div class="col-sm-6 col-lg-4 col-xl-3" *ngFor="let post of posts">
-      <div class="borderTarget">
+      <div class="borderTarget" [routerLink]="['post']" (click)="idOnClick(post.id) ">
         <div>
-         
+          <!-- [routerLink]="['new']" -->
           <h4>{{post.title | titlecase}}</h4>
         </div>
         <div class="img">
