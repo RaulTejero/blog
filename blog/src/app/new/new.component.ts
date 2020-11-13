@@ -23,11 +23,11 @@ export class NewComponent implements OnInit {
 
     this.form = new FormGroup(
       {
-        category: new FormControl('', Validators.required),
-        title: new FormControl('', [Validators.required, Validators.maxLength(30)]),
-        author: new FormControl('', [Validators.required, Validators.maxLength(30)]),
+        category: new FormControl('', [Validators.required]),
+        title: new FormControl('', [Validators.required]),
+        author: new FormControl('', [Validators.required]),
         img: new FormControl(''),
-        text: new FormControl('', [Validators.maxLength(400)]),
+        text: new FormControl('', [Validators.required]),
       }
     )
 
