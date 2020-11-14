@@ -17,7 +17,7 @@ post: Post[];
   async ngOnInit() {
 
     try {
-      this.post = await this.postService.getPost(1);
+      this.post = await this.postService.getPost(this.postService.idPostSelect);
     } catch (error) {
       console.log(error);
     }

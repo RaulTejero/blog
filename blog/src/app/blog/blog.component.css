@@ -1,38 +1,27 @@
 .divselect {
-    margin: 20px auto 0px;
+    margin: 50px auto;
+}
+div.card {
+    margin-bottom: 30px;
+    transition: .3s;
 }
 
-.borderTarget {
-    border-radius: 20px;
-    padding: 5px 10px;
-    /* margin: 20px auto; */
+div.card:hover {
+    transform: scale(1.01);
+    box-shadow:0px 0px 30px 0px rgba(50, 50, 50, 0.54);
+} 
+div.imgBg {
+    width: 95%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    margin:0 auto ;
 }
-
-.borderTarget div:first-child {
-    display: flex;
-    justify-content: space-between;
+ul {
+    list-style: none;
+    padding: 0 20px;
 }
-
-.borderTarget h4, .borderTarget h5 {
-    padding: 10px 0;
-}
-
-.date {
-    text-align: right;
-    font-size: .7em;
-}
-
-.img {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-    margin-bottom: 5px;
-}
-
-img {
-    display: block;
-    margin: 0 auto;
-    max-height: 100%;
-    max-width: 100%;
-    border-radius: 20px;
+ul li {
+    padding: 5px 0;
+   
 }

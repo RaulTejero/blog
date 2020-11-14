@@ -11,17 +11,18 @@ export class PostService {
   categories: string[];
   id: number;
   idPostSelect: number;
+  text: string;
 
   constructor() {
 
     this.id = 7;
     this.categories = ['moda', 'deporte', 'ocio', 'actualidad', 'tecnologia', 'familiar'];
-
+    this.text = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis, ad neque debitis sint, maxime ipsa necessitatibus velit iste nesciunt voluptas perferendis. Corporis, magni nihil. Eum maxime tenetur asperiores dignissimos similique? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis, ad neque \n debitis sint, maxime ipsa necessitatibus velit iste nesciunt voluptas perferendis. Corporis, magni nihil.\n Eum maxime tenetur Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis, ad neque  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis, ad neque debitis sint, maxime ipsa necessitatibus Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis, ad neque debitis sint, maxime ipsa necessitatibus Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis, ad neque debitis sint, maxime ipsa necessitatibusdebitis sint, maxime ipsa necessitatibus asperiores dignissimos similique?'
     this.postsOfBlog = [
       {
         id: 1,
         title: 'Titulo 1 de prueba',
-        text: 'Texto de prueba del post',
+        text: this.text,
         author: 'Autor',
         img: 'https://images.pexels.com/photos/5418319/pexels-photo-5418319.jpeg?cs=srgb&dl=pexels-evie-shaffer-5418319.jpg&fm=jpg',
         category: 'moda'
@@ -29,7 +30,7 @@ export class PostService {
       {
         id: 2,
         title: 'Titulo 2 de prueba',
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, soluta excepturi! Suscipit, aperiam assumenda in debitrit.',
+        text: this.text,
         author: 'Autor',
         img: 'https://images.pexels.com/photos/342521/pexels-photo-342521.jpeg',
         category: 'ocio'
@@ -37,7 +38,7 @@ export class PostService {
       {
         id: 3,
         title: 'Titulo 3 de prueba',
-        text: 'Texto de prueba del post',
+        text: this.text,
         author: 'Autor',
         img: 'https://images.pexels.com/photos/4348638/pexels-photo-4348638.jpeg',
         category: 'deporte'
@@ -45,7 +46,7 @@ export class PostService {
       {
         id: 4,
         title: 'Titulo 4 de prueba',
-        text: 'Texto de prueba del post',
+        text: this.text,
         author: 'Autor',
         img: 'https://images.pexels.com/photos/4226256/pexels-photo-4226256.jpeg',
         category: 'tecnologia'
@@ -53,7 +54,7 @@ export class PostService {
       {
         id: 5,
         title: 'Titulo 5 de prueba',
-        text: 'Texto de prueba del post',
+        text: this.text,
         author: 'Autor',
         img: 'https://images.pexels.com/photos/1257099/pexels-photo-1257099.jpeg',
         category: 'familiar'
@@ -61,7 +62,7 @@ export class PostService {
       {
         id: 6,
         title: 'Titulo 6 de prueba',
-        text: 'Texto de prueba del post',
+        text: this.text,
         author: 'Autor',
         img: 'https://images.pexels.com/photos/3761509/pexels-photo-3761509.jpeg',
         category: 'actualidad'
@@ -97,16 +98,11 @@ export class PostService {
       };
     });
   };
-  getPost(pId): Promise<Post[]>  {
-    return new Promise<Post[]>((resolve, reject)=> {
-      let result = this.postsOfBlog.filter(el =>el.id == pId );
-      // console.log(pId);
-      // console.log(result);
-      console.log(this.idPostSelect);
-      
+  getPost(pId): Promise<Post[]> {
+    return new Promise<Post[]>((resolve, reject) => {
+      let result = this.postsOfBlog.filter(el => el.id == pId);
       resolve(result);
     });
   }
-
 }
 

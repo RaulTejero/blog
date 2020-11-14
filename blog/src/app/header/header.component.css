@@ -1,26 +1,28 @@
 :root {
     --principalColor: rgb(131, 109, 109);
 }
-
-h5 {
+header {
+    margin-top: -4px;
+}
+h5.card-header {
     background-color: rgb(83, 111, 86);
     color: white;
     text-align: right;
+    margin: -2px;
 }
-
 a {
     color: var(--principalColor);
 }
-
 ul {
     background-color: rgb(129, 150, 132);
 }
-
+ul.nav-tabs .nav-link {
+    border: none;
+}
 ul li a:hover {
     color: rgb(255, 255, 255);
     background-color: rgb(46, 80, 54);
 }
-
 .activeRuting {
     color: rgb(255, 255, 255);
     background-color: rgb(83, 111, 86);

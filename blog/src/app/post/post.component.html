@@ -1,16 +1,19 @@
-
-<div>
-    {{post | json}}
-</div>
-<div  *ngFor="let result of post">
-    <h5 class="card-title">{{result.title}}</h5>
-    <img src="{{result.img}}" class="card-img-top" alt="...">
-    <div class="card-body">
-        
-      <p class="card-text">{{result.text}}</p>
+<div class="container col-11"  *ngFor="let result of post">
+    <div>
+        <img src="{{result.img}}" alt="...">
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">{{result.author}}</li>
-      <li class="list-group-item">{{result.date | date}}</li>
-    </ul>
-  </div>
+    
+
+    <h1 class="card-title">{{result.title }}</h1>
+    <h2>
+        {{result.author}}
+    </h2>
+    <p class="card-text">{{ "hola"| br}}</p>
+    
+    <div >
+        34. 354 {{result.date | date}}
+    </div>
+    
+
+</div>
+

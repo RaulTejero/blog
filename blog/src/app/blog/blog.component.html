@@ -8,22 +8,21 @@
 </div>
 <div class="container col-10">
   <div class="row">
-    <div class="col-sm-6 col-lg-4 col-xl-3" *ngFor="let post of posts">
-      <div class="borderTarget" [routerLink]="['post']" (click)="idOnClick(post.id) ">
-        <div>
-          <h4>{{post.title}}</h4>
+    <div class=" target col-sm-6 col-lg-4 col-xl-3" *ngFor="let post of posts">
+        <div class="card" >
+          <p class="text-right m-2 small">747 {{post.date | date}}</p>
+          <div style="background-image: url({{post.img}});" class="imgBg" alt="..."></div>
+          <div class="card-body">
+            <h5 class=" font-weight-bold">{{post.title}}</h5>
+          </div>
+          <ul class="">
+            <li class=" font-weight-lighter">{{post.author}}</li>
+            <li >{{post.category}}</li>
+          </ul>
+          <div class="card-body">
+            <a  [routerLink]="['post']" class="card-link"  (click)="idOnClick(post.id) ">Leer</a>
+          </div>
         </div>
-        <div class="img">
-          <img src="{{post.img}}" alt="">
-        </div>
-        <div>
-          <p>{{post.text | br}}</p>
-          <h5>{{post.author }}</h5>
-          <h6>{{post.category | titlecase}}</h6>
-        </div>
-        <p class="date">{{post.date | date:'dd/MM/yy HH:mm' }}</p>
-      </div>
-      <hr>
     </div>
   </div>
 </div>
