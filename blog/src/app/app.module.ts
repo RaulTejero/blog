@@ -8,6 +8,7 @@ import { NewComponent } from './new/new.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { PostComponent } from './post/post.component';
+import { BrPipe } from './pipes/br.pipe';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { PostComponent } from './post/post.component';
     NewComponent,
     HeaderComponent,
     PostComponent,
+    BrPipe,
   ],
   imports: [
     BrowserModule,

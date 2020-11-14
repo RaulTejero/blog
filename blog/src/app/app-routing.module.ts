@@ -9,7 +9,7 @@ const routes: Routes = [
   {path:'',pathMatch: 'full', redirectTo:'/blog'},
   {path:'blog', component: BlogComponent},
   {path:'new',component: NewComponent},
-  {path:'post',component:PostComponent},
+  {path: 'blog/post', component: PostComponent},
   {path:'**',component:BlogComponent}
 ];
 

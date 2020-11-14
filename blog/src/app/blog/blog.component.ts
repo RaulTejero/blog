@@ -13,17 +13,15 @@ export class BlogComponent implements OnInit {
   changeSelect: string;
   valueSelect: string;
   arrayCategory: string[];
-  idPost: number;
 
   constructor(private postService: PostService) {
     this.arrayCategory = postService.categories;
-   }
+  }
 
   async ngOnInit() {
 
     try {
       this.posts = await this.postService.getAllPost();
-      console.log(this.posts);
     } catch (error) {
       console.log(error);
     }
@@ -34,13 +32,12 @@ export class BlogComponent implements OnInit {
     this.postService.getPostByCategory(this.valueSelect)
       .then(arrFilter => {
         this.posts = arrFilter
-        // console.log(this.posts);
       })
       .catch(error => console.log(error));
   }
   idOnClick(pIdPost) {
-    this.idPost = pIdPost;
-    console.log(this.idPost);
+    this.postService.idPostSelect = pIdPost;
+    
   }
 
 }
