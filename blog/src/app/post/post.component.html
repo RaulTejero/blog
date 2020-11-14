@@ -1,19 +1,9 @@
-<div class="container col-11"  *ngFor="let result of post">
+<div class="container col-11" *ngFor="let result of post">
     <div>
         <img src="{{result.img}}" alt="...">
     </div>
-    
-
     <h1 class="card-title">{{result.title }}</h1>
-    <h2>
-        {{result.author}}
-    </h2>
-    <p class="card-text">{{ "hola"| br}}</p>
-    
-    <div >
-        34. 354 {{result.date | date}}
-    </div>
-    
-
+    <h2>{{result.author}}</h2>
+    <p class="card-text">{{ result.text}}</p>
+    <div>{{result.date | date}}</div>
 </div>
-

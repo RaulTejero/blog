@@ -40,7 +40,11 @@ export class NewComponent implements OnInit {
   async onSubmit() {
     this.newPost = this.form.value;
     this.newPost.date = this.date;
-    console.log(this.newPost.text);
+    if (this.newPost.img =="") {
+      this.newPost.img= "https://image.freepik.com/psd-gratis/plantilla-maqueta-cuaderno-anillado_1051-2872.jpg";
+      
+    }
+    console.log(this.newPost.img);
     await this.postService.getAddPost(this.newPost);
     this.form.reset();
   }

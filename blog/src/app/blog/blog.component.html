@@ -10,14 +10,14 @@
   <div class="row">
     <div class=" target col-sm-6 col-lg-4 col-xl-3" *ngFor="let post of posts">
         <div class="card" >
-          <p class="text-right m-2 small">747 {{post.date | date}}</p>
+          <p class="text-right m-2 small">{{post.date | date}}</p>
           <div style="background-image: url({{post.img}});" class="imgBg" alt="..."></div>
           <div class="card-body">
             <h5 class=" font-weight-bold">{{post.title}}</h5>
           </div>
           <ul class="">
             <li class=" font-weight-lighter">{{post.author}}</li>
-            <li >{{post.category}}</li>
+            <li >{{post.category | titlecase}}</li>
           </ul>
           <div class="card-body">
             <a  [routerLink]="['post']" class="card-link"  (click)="idOnClick(post.id) ">Leer</a>
